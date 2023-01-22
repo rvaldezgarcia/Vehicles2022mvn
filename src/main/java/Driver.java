@@ -81,8 +81,10 @@ public class Driver {
             for(Vehicle vehicle : allVehicles) {
 
                 System.out.println("Odometer " + vehicle.getOdometer() + " || Gallons of Gas " + vehicle.getGallonsOfGas());
-                vehicle.setGallonsOfGas( vehicle.getGallonsOfGas() - (milesDriven / vehicle.getMilesPerGallon()) ) ;
-                vehicle.setOdometer( vehicle.getOdometer()  + milesDriven );
+                // vehicle.setGallonsOfGas( vehicle.getGallonsOfGas() - (milesDriven / vehicle.getMilesPerGallon()) ) ;
+                // vehicle.setOdometer( vehicle.getOdometer()  + milesDriven );
+
+                vehicle.go(milesDriven);
                 System.out.println("Odometer " + vehicle.getOdometer() + " || Gallons of Gas " + vehicle.getGallonsOfGas());
             }
 
