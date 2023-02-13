@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Disabled("No use")
 public class PriusTest {
 
-    /*
+
     private Prius prius;
 
     @Test
@@ -22,11 +22,12 @@ public class PriusTest {
 
         prius.setGallonsOfGas(10);
         prius.setOdometer(0);
-        prius.setMillesPerGallon(50);
+        prius.setMilesPerGallon(50);
         prius.setCharge(4);
     }
 
     private void when_Driven_100Miles() {
+
         prius.go(100);
     }
 
@@ -47,7 +48,7 @@ public class PriusTest {
         prius = new Prius();
         prius.setGallonsOfGas(10);
         prius.setOdometer(100);
-        prius.setMillesPerGallon(50);
+        prius.setMilesPerGallon(50);
         prius.setCharge(9);
     }
 
@@ -56,5 +57,4 @@ public class PriusTest {
         assertEquals(200, prius.getOdometer());
         assertEquals(5 , prius.getCharge());
     }
-    */
 }

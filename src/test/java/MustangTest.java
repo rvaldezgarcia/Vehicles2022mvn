@@ -4,10 +4,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Disabled("No use")
-public class MustangTest {
+public class MustangTest extends VehicleTest{
 
-    /*
     Mustang mustang;
+
+    protected void givenVehicleHas0Odometer15GallonsOfGasAnd20MilesPerGallon() {
+
+        vehicle = new Mustang();
+
+        vehicle.setOdometer(0);
+        vehicle.setGallonsOfGas(15);
+        vehicle.setMilesPerGallon(20);
+    }
 
     @Test
     public void convertible_WhenConvertibleItIsAConvertible() {
@@ -26,6 +34,6 @@ public class MustangTest {
     }
 
     private void thenMustangIsAConvertible() {
-        assertTrue( mustang.getConvertible() );
-    } */
+        assertTrue( mustang.isConvertible() );
+    }
 }
