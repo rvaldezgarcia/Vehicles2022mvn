@@ -19,7 +19,7 @@ public class Prius extends Vehicle {
             super.go(milesDriven);
             charge = charge + (milesDriven/ CHARGE_DENOMINATOR);
         }
-        else {
+        else if( charge >= 5) {
 
             charge -=  milesDriven / MILES_PER_MILLIAMP_PER_HOUR;
             setOdometer( getOdometer() + milesDriven );

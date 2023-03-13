@@ -42,4 +42,9 @@ public class Vehicle {
         this.setGallonsOfGas( this.getGallonsOfGas() - (milesDriven / this.getMilesPerGallon()) ) ;
         this.setOdometer( this.getOdometer()  + milesDriven );
     }
+
+    @Override
+    public String toString() {
+        return "Odometer " + getOdometer() + " || Gallons of Gas " + getGallonsOfGas();
+    }
 }
