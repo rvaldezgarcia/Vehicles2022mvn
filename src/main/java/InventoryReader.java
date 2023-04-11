@@ -2,9 +2,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryReader {
+
+    private static List<Vehicle> allVehicles = new ArrayList<Vehicle>();
 
     public static void main(String[] args) {
         createVehicle();
@@ -18,6 +21,7 @@ public class InventoryReader {
             List<String> inventoryLines = Files.readAllLines(inventoryFilePath);
 
             for (String inventoryItem : inventoryLines ) {
+
                 String[] inventoryArray = inventoryItem.split(",");
 
                 if( inventoryArray.length >= 4 ) {
@@ -33,7 +37,12 @@ public class InventoryReader {
                     String strGallonsOfGas = inventoryArray[3];
                     double gallonsOfGas = Integer.parseInt( strGallonsOfGas );
 
-                    Driver.crea
+                    Vehicle vehicle = Driver.createVehicle(carType);
+                    vehicle.setOdometer(odometer);
+                    vehicle.setMilesPerGallon(milesPerGallon);
+                    vehicle.setGallonsOfGas(gallonsOfGas);
+
+                    allVehicles.add(vehicle);
                 }
             }
 
@@ -44,6 +53,11 @@ public class InventoryReader {
     }
 
     private static void runVehicle() {
-
+        for (Vehicle vehicle :
+                allVehicles) {
+            System.out.println(vehicle);
+            vehicle.go(100);
+            System.out.println(vehicle);
+        }
     }
 }

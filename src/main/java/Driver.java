@@ -89,10 +89,16 @@ public class Driver {
             vehicle = new Sonic();
         }
         else if( selectedVehicle.toString().equals(MUSTANG) ) {
-            vehicle = new Mustang();
+            Mustang mustang = new Mustang();
+
+            vehicle = mustang;
         }
         else if ( selectedVehicle.toString().equals(PRIUS) ) {
-            vehicle = new Prius();
+            Prius prius = new Prius();
+
+            applyForTaxCredit(prius);
+
+            vehicle = prius;
         }
 
         return vehicle;
@@ -112,11 +118,16 @@ public class Driver {
                 vehicle.go(milesDriven);
                 System.out.println(vehicle);
 
+                Sonic.warrantyNumber = "1-800-462-8782";
+
                 // System.out.println(vehicle);
             }
 
         } while( JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, "Do you want to take another trip?", "Go Again?", JOptionPane.YES_NO_OPTION,  JOptionPane.QUESTION_MESSAGE) );
 
+    }
 
+    public static void applyForTaxCredit(LowEmissionVehicle lev) {
+        lev.applyTaxRebate(100);
     }
 }
