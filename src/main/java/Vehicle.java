@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Vehicle {
 
     private int milesPerGallon = 20;
@@ -46,5 +48,9 @@ public class Vehicle {
     @Override
     public String toString() {
         return "Odometer " + getOdometer() + " || Gallons of Gas " + getGallonsOfGas();
+    }
+
+    public List<String> checkForRequiredMaintenance() {
+
     }
 }
