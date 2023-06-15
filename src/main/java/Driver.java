@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Driver {
     public static final String SONIC = "Sonic";
@@ -118,7 +119,13 @@ public class Driver {
                 vehicle.go(milesDriven);
                 System.out.println(vehicle);
 
-                Sonic.warrantyNumber = "1-800-462-8782";
+                // Sonic.warrantyNumber = "1-800-462-8782";
+
+                List<String> requiredMaintenance = vehicle.checkForRequiredMaintenance();
+
+                for( String maintenance : requiredMaintenance ) {
+                    JOptionPane.showMessageDialog(null, maintenance, "Suggested Maintenance", JOptionPane.INFORMATION_MESSAGE);
+                }
 
                 // System.out.println(vehicle);
             }

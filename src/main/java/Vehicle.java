@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vehicle {
+public abstract class Vehicle {
 
     private int milesPerGallon = 20;
     private double gallonsOfGas = 10.0;
@@ -67,4 +67,8 @@ public class Vehicle {
 
         return requiredMaintenance;
     }
+
+    protected abstract List<String> getRecommendations();
+
+    protected abstract int getServiceInterval();
 }
