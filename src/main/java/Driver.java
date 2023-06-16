@@ -3,29 +3,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Driver {
-    public static final String SONIC = "Sonic";
-    public static final String MUSTANG = "Mustang";
-    public static final String PRIUS  = "Prius";
+    public final String SONIC = "Sonic";
+    public final String MUSTANG = "Mustang";
+    public final String PRIUS  = "Prius";
 
     // private static int milesPerGallon = 20;
     // private static double gallonsOfGas = 10.0;
     // private static int odometer = 0;
 
-    private static ArrayList<Vehicle>  allVehicles = new ArrayList<>();
+    private ArrayList<Vehicle>  allVehicles = new ArrayList<>();
 
     // private static int[] milesPerGallon = {20, 25, 15};
     // private static double[] gallonsOfGas = {10.0, 8, 12};
     // private static int[] odometer = {0, 10000, 20000};
 
+    private static Driver driver = null;
+
+    private Driver() {
+
+    }
+
     public static void main(String[] args) {
         System.out.println("In Vehicles Driver");
 
-        promptUser();
+        Driver driver = getInstance();
 
-        displayOutput();
+        driver.promptUser();
+
+        driver.displayOutput();
     }
 
-    public static void promptUser() {
+    public static Driver getInstance() {
+
+        if(driver == null) {
+            driver = new Driver();
+        }
+
+        return driver;
+    }
+
+    public void promptUser() {
 
         System.out.println("Second Line");
 
@@ -82,7 +99,7 @@ public class Driver {
      * @param selectedVehicle A string representing the vehicle we want to create.
      * @return The created vehicle.
      */
-    public static Vehicle createVehicle(final Object selectedVehicle) {
+    public Vehicle createVehicle(final Object selectedVehicle) {
 
         Vehicle vehicle = null;
 
@@ -105,7 +122,7 @@ public class Driver {
         return vehicle;
     }
 
-    private static void displayOutput() {
+    private void displayOutput() {
 
         do {
 
