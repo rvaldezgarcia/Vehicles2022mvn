@@ -7,6 +7,8 @@ public abstract class Vehicle {
     private double gallonsOfGas = 10.0;
     private int odometer = 0;
 
+    protected String description;
+
     private int previousOdometer = 0;
 
     private String color;
@@ -41,6 +43,14 @@ public abstract class Vehicle {
 
     public void setOdometer(int odometer) {
         this.odometer = odometer;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void go(int milesDriven) {
