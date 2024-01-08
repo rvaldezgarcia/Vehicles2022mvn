@@ -45,5 +45,6 @@ public class WordValidation {
         }
 
         return wordsBuilder.toString();
+
     }
 }
